@@ -1,9 +1,7 @@
 const mongoose  = require('mongoose')
 
-
 const dotenv  = require('dotenv')
 dotenv.config()
-
 
 const URI = process.env.URI
 const connectDb = async() => {
@@ -16,6 +14,6 @@ const connectDb = async() => {
 }
 connectDb()
 
-
 const app = require("./app")
-app.listen(3000, console.log("server is running...."))
+const port = process.env.PORT || 5000
+app.listen(port ,console.log("server is running....."))
